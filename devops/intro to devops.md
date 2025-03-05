@@ -1,6 +1,7 @@
 # 🚀 CI/CD Overview  
 
 ![CI/CD Pipeline](https://github.com/user-attachments/assets/6ae39938-284d-4c8f-8b9b-826695aec773)
+![CI/CD Pipeline](https://github.com/user-attachments/assets/1b6e6ac9-ae76-4e83-9ce9-f2d8b863201e)
 
 ## 🔄 Continuous Integration (CI)  
 CI focuses on integrating code changes frequently and automatically.  
