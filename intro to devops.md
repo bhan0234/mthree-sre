@@ -2,7 +2,6 @@
 
 ![CI/CD Pipeline](https://github.com/user-attachments/assets/6ae39938-284d-4c8f-8b9b-826695aec773)
 
-
 ## 🔄 Continuous Integration (CI)  
 CI focuses on integrating code changes frequently and automatically.  
 
@@ -44,7 +43,7 @@ A **tested, versioned, deployable package** automatically deployed to a cloud en
 5. 🎭 **Adjourning:** Project completion.  
 
 ---
-
+![CI/CD Pipeline](https://github.com/user-attachments/assets/84844b1f-d93b-40aa-8d43-4a4d2055d407)
 # 🌎 Software Environments  
 - 🛠 **DEV:** Development environment.  
 - 🔍 **TEST:** Testing environment.  
@@ -91,6 +90,7 @@ Ensures repeated operations produce **the same result** without unintended effec
 - 🐳 **Docker** (Container layering).  
 
 ---
+![CI/CD Pipeline](https://github.com/user-attachments/assets/18411eec-d62a-4005-99bc-043544750b98)
 
 # 📂 AUFS (Advanced Multi-Layered Unification Filesystem)  
 1. 📦 **Base Image (Read-Only):** Immutable foundation (e.g., Ubuntu, Alpine).  
@@ -99,6 +99,7 @@ Ensures repeated operations produce **the same result** without unintended effec
 4. 🔗 **AUFS Union Mount:** Combines layers using copy-on-write.  
 
 ---
+![CI/CD Pipeline](https://github.com/user-attachments/assets/ad0574a3-e8f5-47e3-8ed1-5d5f556a80fe)
 
 # 🔄 DevOps Workflow  
 1. 🏁 **Sprint:** Development cycle for features & fixes.  
