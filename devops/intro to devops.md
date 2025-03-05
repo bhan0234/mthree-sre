@@ -122,7 +122,8 @@ Ensures repeated operations produce **the same result** without unintended effec
 3. 🚀 **Deploy:** Automated production deployment.  
 4. 📊 **Monitor:** Track performance & stability.  
 5. 🔥 **Incident Handling:** Quick debugging & resolution.  
-6. 📝 **Postmortem Analysis:** Root cause & prevention.  
+6. 📝 **Postmortem Analysis:** Root cause & prevention.
+     - A postmortem is a structured process for analyzing incidents, outages, or failures in a system after they occur. It helps teams understand what went wrong, why it happened, and how to prevent similar issues in the future.(	Root Cause Analysis (RCA), 	Impact Assessment, etc)
 
 ---
 
