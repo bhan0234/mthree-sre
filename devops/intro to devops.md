@@ -92,11 +92,26 @@ Ensures repeated operations produce **the same result** without unintended effec
 ---
 ![CI/CD Pipeline](https://github.com/user-attachments/assets/18411eec-d62a-4005-99bc-043544750b98)
 
-# 📂 AUFS (Advanced Multi-Layered Unification Filesystem)  
-1. 📦 **Base Image (Read-Only):** Immutable foundation (e.g., Ubuntu, Alpine).  
-2. 🏗 **Layered Images (Read-Only):** Incremental changes.  
-3. 🛠 **Containers (Read-Write):** Unique writable layers per container.  
-4. 🔗 **AUFS Union Mount:** Combines layers using copy-on-write.  
+# 📂 AUFS (Advanced Multi-Layered Unification Filesystem)
+
+1. 📦 **Base Image (Read-Only)**
+   - At the bottom, we have the base image, which is immutable (read-only). (e.g., Ubuntu, Alpine).  
+   - This image could be something like an Ubuntu or Alpine Linux base image in Docker.
+
+2. 🏗 **Layered Images (Read-Only)**
+   - Above the base image, we have additional image layers.
+   - These layers represent incremental changes applied on top of the base image (e.g., adding system dependencies, application code, etc.).
+   - Each layer remains read-only.
+
+3. 🛠 **Containers (Read-Write)**
+   - At the top, we have containers, which add a read-write layer on top of the image stack.
+   - Each container gets its own read-write layer where changes can be made.
+   - However, the underlying image layers remain unchanged.
+
+4. 🔗 **AUFS Union Mount**
+   - AUFS allows stacking multiple read-only image layers.
+   - It provides a single unified filesystem view where the container sees all layers merged together.
+   - If a container modifies a file, AUFS applies copy-on-write (COW)—the file is copied to the top read-write layer and modified there, leaving lower layers untouched.
 
 ---
 ![CI/CD Pipeline](https://github.com/user-attachments/assets/ad0574a3-e8f5-47e3-8ed1-5d5f556a80fe)
