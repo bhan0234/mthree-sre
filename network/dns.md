@@ -29,8 +29,11 @@
 
 ### **Understanding Domain Names and DNS Hierarchy**
 - Internet domains follow a structured hierarchy:
+- www.google.com
   - Top-Level Domains (TLDs): `.com`, `.org`, `.edu`.
-  - Subdomains: `mail.google.com`, `drive.google.com`.
+  - google (Second-Level Domain - SLD)
+	•	google is the main domain name registered by Google.
+  - Subdomains: `mail.google.com`, `drive.google.com`, `www`
 - DNS queries resolve names step by step, starting from root DNS servers.
 - Organizations can implement internal DNS structures like `mycompany.com` with subdomains for different services (`mail.mycompany.com`, `hr.mycompany.com`).
 
