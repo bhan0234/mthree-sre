@@ -1,6 +1,5 @@
-**Introduction to DNS in Linux for Beginners**
+#Introduction to DNS in Linux for Beginners**
 
-This video introduces Domain Name System (DNS) concepts in Linux for absolute beginners. It covers the basics of DNS configuration, key commands, and practical examples.
 
 ### **Understanding DNS and Hostname Resolution**
 - Two computers, A and B, are part of the same network with IP addresses 192.168.1.10 and 192.168.1.11.
