@@ -1,4 +1,4 @@
-#Introduction to DNS in Linux for Beginners**
+#**Introduction to DNS in Linux for Beginners**
 
 
 ### **Understanding DNS and Hostname Resolution**
