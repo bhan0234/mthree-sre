@@ -139,5 +139,5 @@ For macOS:
 sudo killall -HUP mDNSResponder
 ```
 
-!(https://github.com/user-attachments/assets/8c356541-5227-404e-8175-cb2e60a4a23d)
+![](https://github.com/user-attachments/assets/8c356541-5227-404e-8175-cb2e60a4a23d)
 
