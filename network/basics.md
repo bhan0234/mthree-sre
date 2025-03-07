@@ -95,3 +95,5 @@ sysctl -w net.ipv4.ip_forward=1        # Alternative way to enable forwarding
 
 By using the listed commands, network administrators can configure, manage, and troubleshoot network connectivity effectively.
 
+![Alt text](https://github.com/user-attachments/assets/7b7a3bb9-3880-41f2-be25-e7c48f0dda66)
+
