@@ -58,6 +58,7 @@ This file contains the DNS server addresses used by the system. A typical exampl
 ```sh
 nameserver 8.8.8.8
 nameserver 8.8.4.4
+search  food.com workplace.com
 ```
 These entries define Google's public DNS servers.
 
