@@ -78,6 +78,7 @@ ip addr del 192.168.1.1/24 dev eth0  # Remove an IP from interface eth0
 ip route show                # Show routing table
 ip route add 192.168.2.0/24 via 192.168.1.1  # Add a route
 ip route del 192.168.2.0/24  # Remove a route
+route      #destination,gateway.. etc
 ```
 
 ### **Enabling IP Forwarding**
