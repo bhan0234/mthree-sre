@@ -55,6 +55,20 @@ When a user enters a domain name into a browser, the following steps occur:
 5. The TLD server refers the request to the authoritative DNS server for the domain.
 6. The authoritative server provides the IP address, which is then sent back to the browser.
 
+## DNS record types
+
+| **Record Type** | **Description** | **Example** |
+|---------------|----------------|-------------|
+| **A Record** | Maps a domain name to an IPv4 address. | `google.com → 142.250.190.78` |
+| **AAAA Record** | Maps a domain name to an IPv6 address. | `google.com → 2607:f8b0:4006:81a::200e` |
+| **CNAME Record** | Maps one domain name (alias) to another domain name. | `www.example.com → example.com` |
+| **MX Record** | Specifies mail servers for handling emails. | `example.com → mail.google.com` |
+| **TXT Record** | Stores arbitrary text data (SPF, DKIM, etc.). | `example.com → "v=spf1 include:_spf.google.com ~all"` |
+| **NS Record** | Specifies which DNS servers handle the domain. | `example.com → ns1.google.com, ns2.google.com` |
+| **PTR Record** | Used for reverse DNS lookup (IP to domain). | `142.250.190.78 → google.com` |
+
+
+
 ## DNS Configuration in Linux
 ### 1. `/etc/resolv.conf`
 This file contains the DNS server addresses used by the system. A typical example:
