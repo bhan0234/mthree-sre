@@ -92,3 +92,77 @@ A **server** is a computer or system that provides resources, services, or data 
 Jenkins is a powerful automation tool for CI/CD that enables teams to automate build, test, and deployment processes. It uses a **Master-Agent architecture** to distribute workloads efficiently. By utilizing the **Jenkins CLI**, users can interact with Jenkins remotely and automate administrative tasks efficiently.
 
 ---
+
+## Pipeline Syntax Summary
+
+This document summarizes the syntax for Jenkins Pipelines, focusing on Declarative and Scripted approaches.
+
+**Key Concepts:**
+
+*   **Step:** The fundamental unit of work in a Pipeline.
+*   **Pipeline:** A series of connected steps defining a continuous delivery process.
+*   **Jenkinsfile:** A text file containing the Pipeline definition, stored in source control.
+
+**Two Syntaxes:**
+
+1.  **Declarative Pipeline:** A more structured and opinionated syntax. Requires the "Pipeline: Declarative Plugin".
+2.  **Scripted Pipeline:** A more flexible, Groovy-based DSL.
+
+**Declarative Pipeline**
+
+*   Enclosed within a `pipeline { ... }` block.
+*   Uses Sections, Directives, and Steps.
+*   No semicolons as statement separators (each statement on a new line).
+*   Property references treated as no-argument method invocations.
+
+**Declarative Pipeline Sections:**
+
+*   **`agent`:** Specifies where the Pipeline or stage will execute (e.g., `any`, `none`, `label`, `docker`, `dockerfile`, `kubernetes`). Supports options like `label`, `customWorkspace`, `reuseNode`, and `args`.
+*   **`post`:** Defines steps to run after Pipeline or stage completion, based on conditions like `always`, `changed`, `fixed`, `regression`, `aborted`, `failure`, `success`, `unstable`, `unsuccessful`, and `cleanup`.
+*   **`stages`:** Contains a sequence of `stage` directives representing distinct parts of the delivery process.
+*   **`steps`:** Defines a series of actions to be executed within a `stage`.
+
+**Declarative Pipeline Directives:**
+
+*   **`environment`:** Defines environment variables for the Pipeline or stage. Can use the `credentials()` helper to access pre-defined Jenkins credentials (Secret Text, Secret File, Username and Password, SSH with Private Key).
+*   **`options`:** Configures Pipeline-specific options, such as `buildDiscarder`, `checkoutToSubdirectory`, `disableConcurrentBuilds`, `disableResume`, `newContainerPerStage`, `overrideIndexTriggers`, `preserveStashes`, `quietPeriod`, `retry`, `skipDefaultCheckout`, `skipStagesAfterUnstable`, `timeout`, `timestamps`, `parallelsAlwaysFailFast`, `disableRestartFromStage`. Stage-level options are more limited (e.g., `retry`, `timeout`, `timestamps`, `skipDefaultCheckout`).
+*   **`parameters`:** Defines parameters a user should provide when triggering the Pipeline. Available parameter types: `string`, `text`, `booleanParam`, `choice`, `password`. Values accessible via the `params` object.
+*   **`triggers`:** Defines automated ways to re-trigger the Pipeline (e.g., `cron`, `pollSCM`, `upstream`).
+    *   `cron` syntax:  `MINUTE HOUR DOM MONTH DOW`. Uses `H` (hash) for even load distribution.  Supports operators like `*`, `M-N`, `M-N/X`, `*/X`, `A,B,…​,Z`. Also supports `@yearly`, `@annually`, `@monthly`, `@weekly`, `@daily`, `@midnight`, `@hourly`.
+*   **`stage`:** Defines a stage within the `stages` section. Must contain a `steps` section or other stage-specific directives (`agent`, `tools`, `input`, `when`, `stages`, `parallel`, or `matrix`).
+*   **`tools`:** Defines tools to automatically install and add to the PATH (e.g., `maven`, `jdk`, `gradle`).
+*   **`input`:** Prompts for user input, pausing the stage execution. Configuration options include `message`, `id`, `ok`, `submitter`, `submitterParameter`, and `parameters`.
+*   **`when`:** Conditionally executes a stage based on specified criteria. Supports conditions like `branch`, `buildingTag`, `changelog`, `changeset`, `changeRequest`, `environment`, `equals`, `expression`, `tag`, `not`, `allOf`, `anyOf`, `triggeredBy`.  `beforeAgent`, `beforeInput`, and `beforeOptions` can be used to control when `when` is evaluated.
+*   **Sequential Stages:** `Stages` within a `stage` are executed sequentially.
+*   **`parallel`:** Contains nested `stage` directives to be executed in parallel.  `failFast true` aborts all parallel stages if one fails.  Can also be set as an option at the pipeline definition to force all parallel stages to fail fast.
+*   **`matrix`:** Defines a multi-dimensional matrix of name-value combinations to be run in parallel.
+    *   `axes`: Defines the values for each axis in the matrix.
+    *   `stages`: Defines the list of stages to run sequentially in each cell.
+    *   `excludes`: Allows excluding invalid cells from the matrix.
+    *   Supports stage-level directives under matrix itself: `agent`, `environment`, `input`, `options`, `post`, `tools`, `when`.
+
+**Special Declarative Pipeline Steps:**
+
+*   **`script`:** Executes a block of Scripted Pipeline code within a Declarative Pipeline.  Use sparingly; prefer shared libraries for complex logic.
+
+**Scripted Pipeline**
+
+*   A general-purpose DSL built with Groovy.
+*   Serially executed from top to bottom.
+*   Uses Groovy's flow control (e.g., `if/else`, `try/catch`).
+
+**Scripted Pipeline Steps:**
+
+*   Uses the same steps as Declarative Pipeline, without any syntax-specific steps.
+*   Comprehensive listing of steps available in the Pipeline Steps reference.
+
+**Syntax Comparison**
+
+| Feature        | Declarative Pipeline               | Scripted Pipeline                   |
+|----------------|------------------------------------|------------------------------------|
+| Structure      | More structured, opinionated      | More flexible, Groovy-based        |
+| Syntax         | Simplified, less Groovy knowledge | Requires Groovy knowledge           |
+| Error Handling | Implicit, more limited           | Explicit `try/catch/finally` blocks |
+| Use Cases      | Simpler, common workflows         | Complex, custom workflows           |
+
+This summary provides a foundation for understanding Pipeline syntax. Refer to the Pipeline Steps reference and the official Jenkins documentation for more in-depth information.
