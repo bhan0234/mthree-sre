@@ -95,6 +95,7 @@ pipeline {
 ### **Freestyle Jobs vs Pipeline Jobs**
 - freestyle job is not durable, when sys restarts, pipeline can resume but freestyle cant.
 - freestyle has upstream and downstream which is difficult.
+
 | Feature          | Freestyle Job | Pipeline Job |
 |-----------------|--------------|-------------|
 | Configuration   | UI-based      | Code-based (Jenkinsfile) |
