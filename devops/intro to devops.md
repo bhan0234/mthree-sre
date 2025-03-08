@@ -5,6 +5,10 @@
 
 ## 🔄 Continuous Integration (CI)  
 CI focuses on integrating code changes frequently and automatically.  
+CI/CD automates software development to make deployments faster and safer.
+	•	CI (Continuous Integration) ensures code is built, tested, and packaged.
+	•	CD (Continuous Delivery) requires manual approval before deployment.
+	•	CD (Continuous Deployment) is fully automatic and pushes changes live immediately.
 
 ### 🔹 CI Stages:  
 - 📝 **PLAN:** Agile methodologies like Scrum manage features and user stories.  
