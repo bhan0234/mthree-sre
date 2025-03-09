@@ -3,9 +3,9 @@
 ## 🚀 Docker Run Command
 - `docker run <image>`: Runs a container from an image.
 - `docker run -it ubuntu bash` : allowing you to access the container’s terminal 
-- -i (interactive mode) 🖥️: Keeps STDIN open so you can provide input to the container.
-- -t (pseudo-TTY) 📟: Allocates a terminal session, making it more user-friendly.
-- --name webapp 
+- `-i` (interactive mode) 🖥️: Keeps STDIN open so you can provide input to the container.
+- `-t` (pseudo-TTY) 📟: Allocates a terminal session, making it more user-friendly.
+- `--name` webapp 
 - If the image is not present, Docker pulls it from **Docker Hub**.
 - Subsequent executions reuse the same image.
 
