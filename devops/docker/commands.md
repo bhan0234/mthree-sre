@@ -2,6 +2,10 @@
 
 ## 🚀 Docker Run Command
 - `docker run <image>`: Runs a container from an image.
+- `docker run -it ubuntu bash` : allowing you to access the container’s terminal 
+- -i (interactive mode) 🖥️: Keeps STDIN open so you can provide input to the container.
+- -t (pseudo-TTY) 📟: Allocates a terminal session, making it more user-friendly.
+- --name webapp 
 - If the image is not present, Docker pulls it from **Docker Hub**.
 - Subsequent executions reuse the same image.
 
@@ -15,8 +19,8 @@
 
 ## 📦 Managing Images
 - `docker images`: Lists all available images on the host.
-- `docker rmi <image_name>`: Removes an image (only if no containers are using it).
-- `docker pull <image_name>`: Downloads an image without running it.
+- `docker rmi <image_name:TAG>`: Removes an image (only if no containers are using it).
+- `docker pull <image_name:tag>`: Downloads an image without running it.
 
 ## 🏗️ Running and Exiting Containers
 - `docker run ubuntu`: Runs an Ubuntu container, but it **exits immediately** because it has no process running, it is just an os, no application is running.
@@ -44,6 +48,7 @@
 
 ## 🔄 Running Containers in Detached Mode
 - `docker run -d <image>`: Runs a container in the **background**.
+- `docker run -d --name webapp nginx:1.14-alpine` : give name using name
 - View running containers:
   ```sh
   docker ps
