@@ -79,3 +79,55 @@ Docker Compose allows defining and running multi-container applications using a 
 ### Conclusion 🎯✅📌
 Docker simplifies application development, deployment, and scaling by providing isolated, lightweight, and portable environments. It bridges the gap between development and production, ensuring consistency and reducing setup overhead.
 
+
+
+**Understanding Docker Daemon**
+
+### **What is Docker Daemon?**
+The **Docker Daemon** (`dockerd`) is a background service that manages Docker containers on a system. It listens for Docker API requests and controls container-related tasks such as creating, running, and stopping containers.
+
+### **Key Responsibilities of Docker Daemon**
+1. **Container Management** - Creates, runs, stops, and removes containers.
+2. **Image Management** - Pulls and stores Docker images from registries.
+3. **Networking** - Configures container networking.
+4. **Storage Handling** - Manages container volumes and file systems.
+5. **API Server** - Listens for API requests from the Docker CLI or other clients.
+6. **Orchestration Support** - Manages multi-container applications using Docker Compose or Swarm.
+
+### **How Docker Daemon Works**
+- The daemon runs as a background process (`dockerd`).
+- It communicates with the Docker CLI (`docker` command) via the Docker API.
+- It uses container runtimes (like `runc`) to create and manage containers.
+
+### **Starting and Stopping Docker Daemon**
+#### **On Linux**
+```sh
+sudo systemctl start docker    # Start Docker Daemon
+sudo systemctl stop docker     # Stop Docker Daemon
+sudo systemctl restart docker  # Restart Docker Daemon
+```
+#### **On macOS & Windows**
+Docker Daemon runs automatically when Docker Desktop is started.
+
+### **Checking Docker Daemon Status**
+To check if the Docker Daemon is running:
+```sh
+docker info
+```
+If the daemon is not running, you may see an error like:
+```sh
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+```
+
+### **Common Issues with Docker Daemon**
+1. **Docker Daemon Not Running** - Ensure `dockerd` is started.
+2. **Permission Issues** - Use `sudo` or add your user to the `docker` group.
+3. **Port Conflicts** - Another process may be using the Docker API port.
+4. **Configuration Errors** - Check `/etc/docker/daemon.json` for misconfigurations.
+
+### **Summary**
+The Docker Daemon is the core service that runs in the background, managing containers, images, networking, and API requests. It is essential for running Docker-based applications smoothly.
+
+To interact with the Docker Daemon, you typically use the **Docker CLI**, which sends commands to the daemon for execution.
+
+
