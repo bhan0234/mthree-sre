@@ -64,5 +64,72 @@
 - Stopped containers **do not consume resources** but take up space.
 - Use `docker ps`, `docker images`, and `docker rm` to manage them efficiently.
 
-🛠️ Next, let's practice these commands in the **Docker CLI lab environment**! 🚀
+**Docker Run Commands and Features**
+
+### Running Specific Versions of a Docker Image
+- The `docker run redis` command runs a container with the latest version of Redis (e.g., 5.0.5 as of today).
+- To run a specific version, specify the version tag:
+  ```
+  docker run redis:4.0
+  ```
+- If no tag is specified, Docker defaults to the `latest` tag.
+- To check available versions, visit [Docker Hub](https://hub.docker.com/) and look up the image.
+
+### Interactive Mode and Terminal Input
+- By default, Docker containers do not listen to standard input and run in a non-interactive mode.
+- To enable user input, use `-i` (interactive mode):
+  ```
+  docker run -i myapp
+  ```
+- However, this does not attach the terminal prompt.
+- To also attach the terminal, use `-it` (interactive + pseudo-terminal):
+  ```
+  docker run -it myapp
+  ```
+  This enables both interaction and terminal prompts within the container.
+
+### Port Mapping
+- When running a web application inside a container, it typically listens on an internal port (e.g., 5000).
+- To access it externally, map the container’s port to a port on the Docker host:
+  ```
+  docker run -p 80:5000 mywebapp
+  ```
+  This maps port 80 on the host to port 5000 inside the container.
+- The container has an internal IP (e.g., 172.17.0.2), but it is only accessible from within the Docker host.
+- Users outside the Docker host can access the application via the host’s IP (e.g., 192.168.1.5:80).
+- Multiple applications can be mapped to different ports:
+  ```
+  docker run -p 3306:3306 mysql
+  docker run -p 8306:3306 mysql
+  ```
+  However, the same port on the host cannot be mapped more than once.
+
+### Persisting Data in Docker Containers
+- Docker containers have isolated file systems. Any data created inside the container is lost when the container is deleted.
+- To persist data, use volume mapping:
+  ```
+  docker run -v /opt/data_dir:/var/lib/mysql mysql
+  ```
+- This mounts `/opt/data_dir` from the Docker host to `/var/lib/mysql` inside the container, ensuring data persists even if the container is deleted.
+
+### Inspecting Containers
+- To get detailed information about a container:
+  ```
+  docker inspect <container_id>
+  ```
+- Returns JSON-formatted data, including:
+  - State
+  - Mounts
+  - Configuration
+  - Network settings
+
+### Viewing Container Logs
+- If a container runs in detached mode (`-d`), logs are not immediately visible.
+- To view logs:
+  ```
+  docker logs <container_id>
+  ```
+- Displays standard output from the container.
+
+
 
