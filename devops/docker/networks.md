@@ -20,6 +20,7 @@ To run a container using the bridge network explicitly, use:
 
 ```sh
 docker run ubuntu
+docker network inspect bridge
 ```
 
 🔹 Containers can communicate with each other using their internal IP addresses.
@@ -34,7 +35,7 @@ If you associate a container with the **Host Network**, it removes any network i
 🔹 Example: Running a container with the host network:
 
 ```sh
-docker run ubuntu --network=host
+docker run --network=host ubuntu
 ```
 
 🔹 Example: Running a web server on port `5000` in a web container makes it directly accessible externally without port mapping.
@@ -47,7 +48,7 @@ docker run ubuntu --network=host
 Containers in the **None Network** are completely isolated:
 
 ```sh
-docker run ubuntu --network=none
+docker run --network=none ubuntu
 ```
 
 🔹 They are **not attached** to any network.
@@ -67,6 +68,8 @@ Use the following command:
 docker network create \
 --driver bridge 
 --subnet 192.168.1.0/24 my_custom_network
+
+docker network create --driver bridge --subnet 182.18.0.0/24 --gateway 182.18.0.1 wp-mysql-network
 ```
 
 To list all networks:
