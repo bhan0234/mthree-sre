@@ -55,7 +55,8 @@ docker volume create data_volume
 ```
 2️⃣ Run a container with the volume:
 ```bash
-docker run -v data_volume:/var/lib/mysql mysql
+docker run -v data_volume:/var/lib/mysql MySQL
+// if there is no volume ,it will create a new one and proceed
 ```
 
 Now, the database data is stored **outside** the container in `/var/lib/docker/volumes/` and persists even if the container is deleted. ✅
