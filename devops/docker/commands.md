@@ -115,6 +115,7 @@
 - Example, everytime u run jenkins, it will come from start tot setup, but if u map a volume to /var/jenkins_home then data is shared to all the conatiners
 - To persist data, use volume mapping:
   ```
+  docker exec -it <container_id> cat /var/jenkins_home/secrets/initialAdminPassword    -- tp get the password
   docker run -v /opt/data_dir:/var/lib/mysql mysql
   docker run -p 8080:8080  -v /root/myjenkins:/var/jenkins_home -u root jenkins
   ```
