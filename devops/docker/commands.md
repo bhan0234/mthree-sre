@@ -15,6 +15,7 @@
 
 ## ⏹️ Stopping and Removing Containers
 - `docker stop <container_id/name>`: Stops a running container. prints the container after succesful.
+- `docker start <container_id/name>`: Starts a stopped container.
 - `docker rm <container_id/name>`: Removes a **stopped** container permanently.
 
 ## 📦 Managing Images
