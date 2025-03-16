@@ -33,7 +33,7 @@ The Docker CLI does not need to be on the same system as the Docker Engine. You 
 **Example of Running a Container on a Remote Docker Host:**
 
 ```sh
-$ docker -H tcp://10.1.23.2:2375 run nginx
+$ docker -H=10.1.23.2:2375 run nginx
 ```
 
 ---
