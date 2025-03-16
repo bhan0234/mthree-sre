@@ -23,6 +23,11 @@
 - `docker rmi <image_name:TAG>`: Removes an image (only if no containers are using it).
 - `docker pull <image_name:tag>`: Downloads an image without running it.
 
+## 📦  PORTS MAPPING
+- `PORTS 0.0.0.0:3456->3456/tcp, :::3456->3456/tcp, 0.0.0.0:38080->80/tcp, :::38080->80/tcp`
+- The left side (0.0.0.0:3456) shows the host machine’s ports.
+- The right side (->3456/tcp, ->80/tcp) shows the container’s exposed ports.
+  
 ## 🏗️ Running and Exiting Containers
 - `docker run ubuntu`: Runs an Ubuntu container, but it **exits immediately** because it has no process running, it is just an os, no application is running.
 - Containers **only run while a process is alive**.
