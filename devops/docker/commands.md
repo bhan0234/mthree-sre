@@ -107,9 +107,11 @@
 
 ### Persisting Data in Docker Containers
 - Docker containers have isolated file systems. Any data created inside the container is lost when the container is deleted.
+- Example, everytime u run jenkins, it will come from start tot setup, but if u map a volume to /var/jenkins_home then data is shared to all the conatiners
 - To persist data, use volume mapping:
   ```
   docker run -v /opt/data_dir:/var/lib/mysql mysql
+  docker run -p 8080:8080  -v /root/myjenkins:/var/jenkins_home -u root jenkins
   ```
 - This mounts `/opt/data_dir` from the Docker host to `/var/lib/mysql` inside the container, ensuring data persists even if the container is deleted.
 
