@@ -1,10 +1,10 @@
-**Pandas**
+**Pandas🎯📊🐼**
 
 Pandas is used for data manipulation and analysis. It offers data structures like Series and DataFrame, which are designed for handling tabular data and provide functionality similar to spreadsheets. Pandas integrates seamlessly with NumPy and offers a variety of tools for data cleaning, aggregation, transformation, and visualization.
 
 ---
 
-**Series**
+**Series📌📉📊**
 
 A **Series** is a one-dimensional labeled array capable of holding any data type. It can be thought of as a column in a table or an Excel spreadsheet.
 
@@ -33,7 +33,7 @@ print(series)
 
 ---
 
-**DataFrames**
+**DataFrames🏛️📋🔢**
 
 While a **Series** is essentially a one-dimensional labeled array, a **DataFrame** can be thought of as a two-dimensional table with labeled axes.
 
@@ -71,7 +71,7 @@ viper               4       5
 sidewinder          7       8
 ```
 
-**`head()`** Method:
+**`head()`** Method 🧐📖🔍:
 
 ```python
 print(df.head())
@@ -81,7 +81,7 @@ The `head()` function on the **DataFrame** object returns the first 5 rows of th
 
 ---
 
-**Load Data from Files:**
+**Load Data from Files:📂📝🔄**
 
 ```python
 import pandas as pd
@@ -93,7 +93,7 @@ print(df.head())
 
 ---
 
-**DataFrame Indexing**
+**DataFrame Indexing  🎯🔢📌**
 
 **Accessing Data Using Labels and Integer Indexing:**
 
@@ -125,7 +125,7 @@ print(df.iloc[1])
 print(df['city'].iloc[2])
 ```
 
-**Selecting Rows with ****************************************************************************************************************************`loc`**************************************************************************************************************************** and ****************************************************************************************************************************`iloc`****************************************************************************************************************************:**
+**Selecting Rows with `loc`and `iloc`:**
 
 ```python
 df = pd.DataFrame({'A': [0, 1, 2], 'B': [3, 4, 5], 'C': [6, 7, 8]}, index=['X', 'Y', 'Z'])
@@ -149,7 +149,7 @@ df.loc['cobra', 'shield']
 
 ---
 
-**Slicing of DataFrame**
+**Slicing of DataFrame✂️📏📋**
 
 Slicing allows selecting specific portions of a DataFrame based on row and column indices.
 
@@ -174,7 +174,7 @@ print(df.iloc[2:])
 
 ---
 
-**Adding Columns and Rows**
+**Adding Columns and Rows➕📊🔧**
 
 Adding new columns in a DataFrame is very easy; it's much like adding a new key-value pair in a dictionary. You can either specify values directly, or you can use existing data in the DataFrame.
 
@@ -212,7 +212,7 @@ print(df1)
 
 ---
 
-**Filtering, Sorting, and Updating DataFrames**
+**Filtering, Sorting, and Updating DataFrames🧐🔍📊**
 
 Filtering involves selecting a subset of rows or columns from a DataFrame based on some condition(s).
 
@@ -260,6 +260,7 @@ less_than_70k = df['salary'] < 70000
 print(less_than_70k)
 # Give them a 10% raise
 # df.loc[[True, True, False, False, False], 'salary'] *= 1.1, same as
+#multiple coloumn lables then pass as a list [ salary, authpr]
 df.loc[less_than_70k, 'salary'] *= 1.1
 
 # David has been promoted, but we have forgotten his index.
