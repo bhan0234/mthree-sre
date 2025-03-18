@@ -307,3 +307,304 @@ df['total'] = df['total'].fillna(df['quantity'] * df['price'])
 df['customer_name'] = df['customer_name'].fillna('Unknown')
 print(df)
 ```
+
+
+**Descriptive Statistics📊**
+Pandas provides a range of functions for computing descriptive statistics, such as mean, standard deviation, and percentiles, using numerical data in DataFrames and Series. 
+`describe()`
+
+```python
+import pandas as pd
+
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Falco'],
+    'Math': [90, 85, 72, 80, 95, 88],
+    'Science': [95, 80, 85, 70, 90, 91],
+    'English': [80, 75, 85, 90, 95, 79]
+}
+
+df = pd.DataFrame(data)
+print(df.describe())
+#Output:
+
+            Math    Science    English
+count   6.000000   6.000000   6.000000
+mean   85.000000  85.166667  84.000000
+std     8.099383   9.064583   7.483315
+min    72.000000  70.000000  75.000000
+25%    81.250000  81.250000  79.250000
+50%    86.500000  87.500000  82.500000
+75%    89.500000  90.750000  88.750000
+max    95.000000  95.000000  95.000000
+
+```
+
+
+**Grouping and Aggregation📊**
+In pandas, grouping is done using the `groupby()` function, which creates a GroupBy object that contains information about the groups. Once we have a GroupBy object, we can apply aggregation functions like `sum(), mean(), min(), max(), and count()` to compute summary statistics for each group.
+
+
+```python
+import pandas as pd
+
+data = {
+    'Year': [2010, 2010, 2010, 2010, 2011, 2011, 2011, 2011, 
+             2012, 2012, 2012, 2012, 2013, 2013, 2013, 2013],
+    'Gender': ['M', 'F', 'M', 'F', 'M', 'F', 'M', 'F', 
+               'M', 'F', 'M', 'F', 'M', 'F', 'M', 'F'],
+    'Count': [101, 153, 120, 140, 214, 257, 180, 220, 
+              309, 350, 290, 330, 435, 457, 400, 420]
+}
+
+df = pd.DataFrame(data)
+
+# Example of grouping: group by year and gender and compute the sum of counts for each group
+grouped_df = df.groupby(['Year', 'Gender']).sum()
+
+print(grouped_df)
+
+#Output:
+
+             Count
+Year Gender       
+2010 F         293
+     M         221
+2011 F         477
+     M         394
+2012 F         680
+     M         599
+2013 F         877
+     M         835
+
+```
+**Plotting📊**
+When you plot data using Pandas, you are essentially using Matplotlib in the background. Pandas plot() method is a wrapper around Matplotlib's plotting functions, so it simplifies the syntax for creating common plots. However, Matplotlib is still being used to generate the plot.
+- We first create a DataFrame with the x and y values.
+- We then plot the data by calling plot on the DataFrame and specifying the x and y columns with keyword arguments.
+- We also add a label to the plot using the label parameter.
+- Finally, we add a title and axis labels using the title, xlabel, and ylabel methods the on matplotlib.pyplot module.
+  
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Create some data
+x = np.array([0.0, 0.3, 1.2, 2.1, 2.8, 3.6, 4.1, 4.8, 5.3, 6.0])
+y = np.sin(x)
+
+# Create a DataFrame
+df = pd.DataFrame({'x': x, 'y': y})
+print(df)
+
+# Plot the data, default line graph
+df.plot(x='x', y='y', label='sin(x)', kind="bar")
+
+# Add a title and axis labels
+plt.title('Plot of sin(x)')
+plt.xlabel('x')
+plt.ylabel('sin(x)')
+
+# Show the plot
+plt.show()
+
+# using matplotlib
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Create some data
+x = np.array([0.0, 0.3, 1.2, 2.1, 2.8, 3.6, 4.1, 4.8, 5.3, 6.0])
+y = np.sin(x)
+
+# Create a DataFrame
+df = pd.DataFrame({'x': x, 'y': y})
+print(df)
+
+# Use Matplotlib directly to create the plot
+plt.bar(df['x'], df['y'], label='sin(x)')  # Bar plot using Matplotlib
+
+# Add a title and axis labels
+plt.title('Plot of sin(x)')
+plt.xlabel('x')
+plt.ylabel('sin(x)')
+
+# Show the plot
+plt.show()
+```
+
+
+
+Concept 2: Create Series
+Concept 3: Creating DataFrames
+Concept 4: Loading Data from Files
+Concept 5: DataFrame Indexing
+Concept 6: DataFrame Slicing
+Concept 7: Adding Columns and Rows
+Concept 8: Filtering, Sorting, and Updating DataFrames
+Concept 9: Cleaning Data
+Concept 10: Descriptive Statistics
+Concept 11: Grouping and Aggregation
+Concept 12: Plotting with Pandas
+
+
+**Pandas Concepts Summary**
+
+---
+
+### **Concept 2: Create Series**
+A **Series** is a one-dimensional labeled array capable of holding any data type.
+
+**Syntax:**
+```python
+import pandas as pd
+
+data = [1, 2, 3, 4, 5]
+labels = ['A', 'B', 'C', 'D', 'E']
+series = pd.Series(data, index=labels)
+print(series)
+```
+
+---
+
+### **Concept 3: Creating DataFrames**
+A **DataFrame** is a two-dimensional labeled table with columns of potentially different types.
+
+**Syntax:**
+```python
+import pandas as pd
+
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie'],
+    'Age': [25, 30, 35],
+    'City': ['New York', 'San Francisco', 'Los Angeles']
+}
+df = pd.DataFrame(data)
+print(df)
+```
+
+---
+
+### **Concept 4: Loading Data from Files**
+Pandas allows loading data from various file formats like CSV, Excel, and JSON.
+
+**Syntax:**
+```python
+import pandas as pd
+df = pd.read_csv('file.csv')
+print(df.head())
+```
+
+---
+
+### **Concept 5: DataFrame Indexing**
+Indexing in Pandas allows selection of specific rows or columns.
+
+**Syntax:**
+```python
+# Using labels
+print(df['Name'])
+# Using integer index
+print(df.iloc[1])
+# Specific element
+print(df.loc[1, 'City'])
+```
+
+---
+
+### **Concept 6: DataFrame Slicing**
+Extracting specific portions of a DataFrame.
+
+**Syntax:**
+```python
+# Selecting specific columns
+df[['Name', 'City']]
+# Slicing rows
+df.iloc[2:]
+```
+
+---
+
+### **Concept 7: Adding Columns and Rows**
+New columns can be added like dictionary keys, while rows are added using `pd.concat`.
+
+**Syntax:**
+```python
+# Adding a column
+df['Salary'] = [50000, 60000, 70000]
+# Adding rows
+df2 = pd.DataFrame({'Name': ['David'], 'Age': [40], 'City': ['Boston']})
+df = pd.concat([df, df2], ignore_index=True)
+```
+
+---
+
+### **Concept 8: Filtering, Sorting, and Updating DataFrames**
+Filtering allows selecting specific rows based on conditions.
+
+**Syntax:**
+```python
+# Filtering
+df[df['Age'] > 30]
+# Sorting
+df.sort_values(by='Age', ascending=False)
+# Updating
+df.loc[df['Name'] == 'Alice', 'Age'] = 26
+```
+
+---
+
+### **Concept 9: Cleaning Data**
+Handling missing or incorrect data using Pandas.
+
+**Syntax:**
+```python
+# Dropping missing values
+df.dropna()
+# Filling missing values
+df.fillna(value=0)
+# Removing duplicates
+df.drop_duplicates()
+```
+
+---
+
+### **Concept 10: Descriptive Statistics**
+Provides summary statistics for numerical data.
+
+**Syntax:**
+```python
+# Summary statistics
+df.describe()
+# Mean
+df['Age'].mean()
+# Standard deviation
+df['Age'].std()
+```
+
+---
+
+### **Concept 11: Grouping and Aggregation**
+Grouping allows aggregating data by categories.
+
+**Syntax:**
+```python
+# Grouping
+df.groupby('City').mean()
+# Aggregation
+df.groupby('City').agg({'Age': 'mean', 'Salary': 'sum'})
+```
+
+---
+
+### **Concept 12: Plotting with Pandas**
+Pandas integrates with Matplotlib for data visualization.
+
+**Syntax:**
+```python
+import matplotlib.pyplot as plt
+
+df['Age'].plot(kind='bar')
+plt.show()
+```
+
