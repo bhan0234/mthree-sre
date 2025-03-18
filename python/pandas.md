@@ -2,6 +2,20 @@
 
 Pandas is used for data manipulation and analysis. It offers data structures like Series and DataFrame, which are designed for handling tabular data and provide functionality similar to spreadsheets. Pandas integrates seamlessly with NumPy and offers a variety of tools for data cleaning, aggregation, transformation, and visualization.
 
+
+### **Table of Contents**
+- [Concept 2: Create Series](#concept-2-create-series)
+- [Concept 3: Creating DataFrames](#concept-3-creating-dataframes)
+- [Concept 4: Loading Data from Files](#concept-4-loading-data-from-files)
+- [Concept 5: DataFrame Indexing](#concept-5-dataframe-indexing)
+- [Concept 6: DataFrame Slicing](#concept-6-dataframe-slicing)
+- [Concept 7: Adding Columns and Rows](#concept-7-adding-columns-and-rows)
+- [Concept 8: Filtering, Sorting, and Updating DataFrames](#concept-8-filtering-sorting-and-updating-dataframes)
+- [Concept 9: Cleaning Data](#concept-9-cleaning-data)
+- [Concept 10: Descriptive Statistics](#concept-10-descriptive-statistics)
+- [Concept 11: Grouping and Aggregation](#concept-11-grouping-and-aggregation)
+- [Concept 12: Plotting with Pandas](#concept-12-plotting-with-pandas)
+
 ---
 
 **Series📌📉📊**
@@ -439,18 +453,6 @@ plt.show()
 
 ---
 
-### **Table of Contents**
-- [Concept 2: Create Series](#concept-2-create-series)
-- [Concept 3: Creating DataFrames](#concept-3-creating-dataframes)
-- [Concept 4: Loading Data from Files](#concept-4-loading-data-from-files)
-- [Concept 5: DataFrame Indexing](#concept-5-dataframe-indexing)
-- [Concept 6: DataFrame Slicing](#concept-6-dataframe-slicing)
-- [Concept 7: Adding Columns and Rows](#concept-7-adding-columns-and-rows)
-- [Concept 8: Filtering, Sorting, and Updating DataFrames](#concept-8-filtering-sorting-and-updating-dataframes)
-- [Concept 9: Cleaning Data](#concept-9-cleaning-data)
-- [Concept 10: Descriptive Statistics](#concept-10-descriptive-statistics)
-- [Concept 11: Grouping and Aggregation](#concept-11-grouping-and-aggregation)
-- [Concept 12: Plotting with Pandas](#concept-12-plotting-with-pandas)
 
 ---
 
