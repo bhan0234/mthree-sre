@@ -99,8 +99,8 @@ print(df.head())
 
 Indexing in Pandas allows for efficient selection, slicing, and manipulation of data within DataFrames. There are two primary methods:
 
-- **Label-based Indexing (********`loc`********\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*)**: Access data using explicit row and column labels.
-- **Integer-based Indexi**\*\*\*\*\*\*`iloc`\*\*\*\*****\*\*\*\*)******\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\`**)\*\*: Access data using numerical positions.
+- **Label-based Indexing `loc`: Access data using explicit row and column labels.
+- **Integer-based `iloc`: Access data using numerical positions.
 
 These methods enable retrieving entire columns, specific rows, or even individual elements within a DataFrame.
 
