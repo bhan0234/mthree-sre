@@ -271,3 +271,39 @@ df.loc[df['name'] == 'David', 'salary'] = 85000
 # Print the updated DataFrame
 print(df)
 ```
+**Cleaning of data🧹📊**
+- The `drop_duplicates` method, which filters rows which have an identical row somewhere else in the DataFrame
+- The `dropna` method, which drops any rows with "missing" data, which in this case will be the NaN values that pandas creates from Python None values.
+- The `fillna` method, which replaces "missing" values with something else.
+
+```python
+import pandas as pd
+
+data = {
+    'order_id': [1001, 1002, 1003, 1004, 1005, 1004],
+    'product_name': ['apple', 'banana', 'orange', 'apple', 'banana', 'apple'],
+    'quantity': [3, 4, None, 2, 5, 2],
+    'price': [1.2, 2.5, 1.8, 1.2, 2.5, 1.2],
+    'total': [3.6, 10, None, 2.4, 12.5, 2.4],
+    'customer_name': ['Alice', 'Bob', 'Charlie', 'David', None, 'David']
+}
+
+df = pd.DataFrame(data)
+print(df)
+print(" ")
+
+# Example of removing duplicates
+df_no_duplicates = df.drop_duplicates()
+print(df_no_duplicates)
+print(" ")
+# Example of dealing with missing data
+df_no_missing = df.dropna()
+print(df_no_missing)
+print(" ")
+
+# Examples of changing data types
+df['quantity'] = df['quantity'].fillna(5) #filling nan with 0
+df['total'] = df['total'].fillna(df['quantity'] * df['price'])
+df['customer_name'] = df['customer_name'].fillna('Unknown')
+print(df)
+```
