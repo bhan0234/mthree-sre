@@ -289,6 +289,7 @@ print(df)
 - The `drop_duplicates` method, which filters rows which have an identical row somewhere else in the DataFrame
 - The `dropna` method, which drops any rows with "missing" data, which in this case will be the NaN values that pandas creates from Python None values.
 - The `fillna` method, which replaces "missing" values with something else.
+- `drop()`: Removes rows or columns.
 
 ```python
 import pandas as pd
@@ -451,11 +452,6 @@ plt.show()
 
 **Pandas Concepts Summary**
 
----
-
-
----
-
 ### **Concept 2: Create Series**
 A **Series** is a one-dimensional labeled array capable of holding any data type.
 
@@ -538,4 +534,77 @@ New columns can be added like dictionary keys, while rows are added using `pd.co
 df['Salary'] = [50000, 60000, 70000]
 # Adding rows
 df2 = pd.DataFrame({'Name': ['David'], 'Age': [40], 'City': ['Boston']})
-df = pd.concat([df, df2],
+df = pd.concat([df, df2], ignore_index=True)
+```
+
+---
+
+### **Concept 8: Filtering, Sorting, and Updating DataFrames**
+Filtering allows selecting specific rows based on conditions.
+
+**Syntax:**
+```python
+# Filtering
+df[df['Age'] > 30]
+# Sorting
+df.sort_values(by='Age', ascending=False)
+# Updating
+df.loc[df['Name'] == 'Alice', 'Age'] = 26
+```
+
+---
+
+### **Concept 9: Cleaning Data**
+Handling missing or incorrect data using Pandas.
+
+**Syntax:**
+```python
+# Dropping missing values
+df.dropna()
+# Filling missing values
+df.fillna(value=0)
+# Removing duplicates
+df.drop_duplicates()
+```
+
+---
+
+### **Concept 10: Descriptive Statistics**
+Provides summary statistics for numerical data.
+
+**Syntax:**
+```python
+# Summary statistics
+df.describe()
+# Mean
+df['Age'].mean()
+# Standard deviation
+df['Age'].std()
+```
+
+---
+
+### **Concept 11: Grouping and Aggregation**
+Grouping allows aggregating data by categories.
+
+**Syntax:**
+```python
+# Grouping
+df.groupby('City').mean()
+# Aggregation
+df.groupby('City').agg({'Age': 'mean', 'Salary': 'sum'})
+```
+
+---
+
+### **Concept 12: Plotting with Pandas**
+Pandas integrates with Matplotlib for data visualization.
+
+**Syntax:**
+```python
+import matplotlib.pyplot as plt
+
+df['Age'].plot(kind='bar')
+plt.show()
+```
+
