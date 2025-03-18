@@ -435,20 +435,22 @@ plt.show()
 
 
 
-Concept 2: Create Series
-Concept 3: Creating DataFrames
-Concept 4: Loading Data from Files
-Concept 5: DataFrame Indexing
-Concept 6: DataFrame Slicing
-Concept 7: Adding Columns and Rows
-Concept 8: Filtering, Sorting, and Updating DataFrames
-Concept 9: Cleaning Data
-Concept 10: Descriptive Statistics
-Concept 11: Grouping and Aggregation
-Concept 12: Plotting with Pandas
-
-
 **Pandas Concepts Summary**
+
+---
+
+### **Table of Contents**
+- [Concept 2: Create Series](#concept-2-create-series)
+- [Concept 3: Creating DataFrames](#concept-3-creating-dataframes)
+- [Concept 4: Loading Data from Files](#concept-4-loading-data-from-files)
+- [Concept 5: DataFrame Indexing](#concept-5-dataframe-indexing)
+- [Concept 6: DataFrame Slicing](#concept-6-dataframe-slicing)
+- [Concept 7: Adding Columns and Rows](#concept-7-adding-columns-and-rows)
+- [Concept 8: Filtering, Sorting, and Updating DataFrames](#concept-8-filtering-sorting-and-updating-dataframes)
+- [Concept 9: Cleaning Data](#concept-9-cleaning-data)
+- [Concept 10: Descriptive Statistics](#concept-10-descriptive-statistics)
+- [Concept 11: Grouping and Aggregation](#concept-11-grouping-and-aggregation)
+- [Concept 12: Plotting with Pandas](#concept-12-plotting-with-pandas)
 
 ---
 
@@ -534,77 +536,4 @@ New columns can be added like dictionary keys, while rows are added using `pd.co
 df['Salary'] = [50000, 60000, 70000]
 # Adding rows
 df2 = pd.DataFrame({'Name': ['David'], 'Age': [40], 'City': ['Boston']})
-df = pd.concat([df, df2], ignore_index=True)
-```
-
----
-
-### **Concept 8: Filtering, Sorting, and Updating DataFrames**
-Filtering allows selecting specific rows based on conditions.
-
-**Syntax:**
-```python
-# Filtering
-df[df['Age'] > 30]
-# Sorting
-df.sort_values(by='Age', ascending=False)
-# Updating
-df.loc[df['Name'] == 'Alice', 'Age'] = 26
-```
-
----
-
-### **Concept 9: Cleaning Data**
-Handling missing or incorrect data using Pandas.
-
-**Syntax:**
-```python
-# Dropping missing values
-df.dropna()
-# Filling missing values
-df.fillna(value=0)
-# Removing duplicates
-df.drop_duplicates()
-```
-
----
-
-### **Concept 10: Descriptive Statistics**
-Provides summary statistics for numerical data.
-
-**Syntax:**
-```python
-# Summary statistics
-df.describe()
-# Mean
-df['Age'].mean()
-# Standard deviation
-df['Age'].std()
-```
-
----
-
-### **Concept 11: Grouping and Aggregation**
-Grouping allows aggregating data by categories.
-
-**Syntax:**
-```python
-# Grouping
-df.groupby('City').mean()
-# Aggregation
-df.groupby('City').agg({'Age': 'mean', 'Salary': 'sum'})
-```
-
----
-
-### **Concept 12: Plotting with Pandas**
-Pandas integrates with Matplotlib for data visualization.
-
-**Syntax:**
-```python
-import matplotlib.pyplot as plt
-
-df['Age'].plot(kind='bar')
-plt.show()
-```
-
+df = pd.concat([df, df2],
