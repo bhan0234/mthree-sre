@@ -135,7 +135,7 @@ selector:
 
 - There are options for **automatically scaling** the replica set based on load.
 - This is an **advanced topic** that will be covered later.
-
+- if u try to add a new one, replica set automatically deletes them.
 ---
 
 ## ✨ Summary of Commands
