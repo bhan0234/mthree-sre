@@ -72,9 +72,12 @@ spec:
 ### **Deploying the Pod**
 
 - Save the YAML file as `pod-definition.yaml`.
-- Use the following command to create the pod:
+- Use the following command to create the pod: apply is used to create if the file not present and update
+- create only creates , can be uaed only once i.e to create
   ```sh
   kubectl apply -f pod-definition.yaml
+  kubectl create -f pod-definition.yaml
+  
   ```
 - Verify the pod is running:
   ```sh
