@@ -81,7 +81,11 @@ They **monitor** Kubernetes objects and **respond** accordingly to maintain the 
    kubectl get replicasets
    kubectl get pods
    ```
-
+6. **edit**
+- a temporary file opens with extra fields, u can modify the replicas there
+   ```sh
+   kubectl edit replicaset <name> 
+   ```
 ---
 
 ## 🌟 Importance of Labels & Selectors
@@ -142,7 +146,7 @@ selector:
 
 | Command                                                          | Description                                                                               |
 | ---------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `kubectl create -f <file>`                                       | Creates a replica set (or any other Kubernetes object) from the provided definition file. |
+| `kubectl create -f <file>`, `edit rs`                            | Creates a replica set (or any other Kubernetes object) from the provided definition file. |
 | `kubectl get rs`                                                 | Lists all replica sets.                                                                   |
 | `kubectl delete rs <replica-set-name>`                           | Deletes the specified replica set.                                                        |
 | `kubectl replace -f <file>`                                      | Updates the replica set based on the updated definition file.                             |
