@@ -76,6 +76,14 @@ This command:
 To see the list of running pods:
 ```bash
 kubectl get pods
+kubectl delete pod <pod-name>
+kubectl delete pods --all  // delete all pods in a name space
+
+//npdes
+kubectl get nodes
+kubectl describe node <node-name>
+kubectl delete node <node-name>
+kubectl cordon <node-name>   // make node unschedulable
 ```
 - The output shows the **status** of each pod:
   - `ContainerCreating` → The pod is still setting up.
@@ -92,6 +100,15 @@ Displays detailed information about the `nginx` Pod, including its events, IP, c
 kubectl get pods -o wide
 ```
 Displays additional details like **node name, IP address, and container images**.
+
+### 🔹 Extra - A namespace in Kubernetes is a way to organize and isolate resources within a cluster. It allows multiple teams or applications to use the same cluster without interfering with each other.
+```sh
+kubectl get namespaces
+kubectl create namespace <namespace-name>
+kubectl delete namespace <namespace-name>
+kubectl apply -f my-app.yaml --namespace=<namespace-name>  // deploy resources in specific namespace
+
+```
 
 ### 🔹 Exposing a Pod
 - By default, a newly created pod is **not accessible externally**.
