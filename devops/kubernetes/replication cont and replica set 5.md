@@ -131,7 +131,7 @@ They **monitor** Kubernetes objects and **respond** accordingly to maintain the 
    kubectl get pods
    ```
 6. **edit**
-- a temporary file opens with extra fields, u can modify the replicas there
+- a temporary file opens with extra fields, u can modify the replicas there, save then updates automatically apply
    ```sh
    kubectl edit replicaset <name> 
    ```
@@ -200,7 +200,7 @@ selector:
 | `kubectl delete rs <replica-set-name>`                           | Deletes the specified replica set.                                                        |
 | `kubectl replace -f <file>`                                      | Updates the replica set based on the updated definition file.                             |
 | `kubectl scale --replicas=<count> replicaset/<replica-set-name>` | Scales the replica set directly from the command line without modifying the file.         |
-
+| kubectl edit replicaset <name>  | edit and update immediately |
 ---
 
 ## 📊 Summary
