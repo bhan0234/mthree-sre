@@ -128,6 +128,25 @@ If no agent with the label kaniko is available, Jenkins will wait until one is f
 
 ```
 *   **`post`:** Defines steps to run after Pipeline or stage completion, based on conditions like `always`, `changed`, `fixed`, `regression`, `aborted`, `failure`, `success`, `unstable`, `unsuccessful`, and `cleanup`.
+```
+post {
+    always {
+        // Runs always, no matter what
+    }
+    success {
+        // Runs only if the pipeline succeeds
+    }
+    failure {
+        // Runs only if the pipeline fails
+    }
+    unstable {
+        // Runs if the pipeline is marked as unstable
+    }
+    changed {
+        // Runs if the build status has changed from the previous run
+    }
+}
+```
 *   **`stages`:** Contains a sequence of `stage` directives representing distinct parts of the delivery process.
 *   **`steps`:** Defines a series of actions to be executed within a `stage`.
 
