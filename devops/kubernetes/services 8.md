@@ -78,6 +78,11 @@ spec:
     app: myapp
     type: front-end
 ```
+###commands for nodeport
+```
+kubectl create -f services-def.yaml
+kubectl get svc
+```
 ### Service Discovery and Load Balancing
 - When a service is created, Kubernetes automatically assigns a **ClusterIP**.
 - Using labels and selectors, the service identifies matching pods.
