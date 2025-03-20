@@ -213,7 +213,7 @@ After an update → Old ReplicaSet scaled to `0`, new one has `5` pods
 ## 🔙 Rolling Back a Deployment
 If an update fails, **rollback** to a previous revision.
 
-### 🔄 Undo Last Deployment Change:
+### 🔄 Undo Last Deployment Change:  when we undo if any of the previous revisions is the same as the new revision then the old one will not be shown
 ```sh
 kubectl rollout undo deployment/<deployment-name>
 ```
