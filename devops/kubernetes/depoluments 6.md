@@ -255,8 +255,8 @@ deployment "nginx" created
 | **Rollback to Specific Revision** | `kubectl rollout undo deployment/<deployment-name> --to-revision=<revision-number>` |
 | **View Deployment Details** | `kubectl describe deployment <deployment-name>` |
 | **List ReplicaSets** | `kubectl get replicasets` |
-| record is deprecated | `kubectl set image deployment nginx-deployment nginx=nginx:1.26.3
-kubectl annotate deployment nginx-deployment kubernetes.io/change-cause="Updated container image to v2"` |
+| record is deprecated | `kubectl set image deployment nginx-deployment nginx=nginx:1.26.3` |  
+|                      | `kubectl annotate deployment nginx-deployment kubernetes.io/change-cause="Updated container image to v2"` |  
 ---
 ## 🎯 Conclusion
 - **Kubernetes manages rollouts & rollbacks seamlessly**
