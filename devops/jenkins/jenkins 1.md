@@ -118,6 +118,15 @@ This document summarizes the syntax for Jenkins Pipelines, focusing on Declarati
 **Declarative Pipeline Sections:**
 
 *   **`agent`:** Specifies where the Pipeline or stage will execute (e.g., `any`, `none`, `label`, `docker`, `dockerfile`, `kubernetes`). Supports options like `label`, `customWorkspace`, `reuseNode`, and `args`.
+```
+Tells Jenkins to find a worker node that has the label kaniko.
+If no agent with the label kaniko is available, Jenkins will wait until one is free.
+“kaniko” likely refers to a node configured for building Docker images using Kaniko (a tool for building container images in Kubernetes without needing Docker
+  agent {
+      label 'kaniko'
+  }
+
+```
 *   **`post`:** Defines steps to run after Pipeline or stage completion, based on conditions like `always`, `changed`, `fixed`, `regression`, `aborted`, `failure`, `success`, `unstable`, `unsuccessful`, and `cleanup`.
 *   **`stages`:** Contains a sequence of `stage` directives representing distinct parts of the delivery process.
 *   **`steps`:** Defines a series of actions to be executed within a `stage`.
