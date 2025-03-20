@@ -153,7 +153,35 @@ post {
 **Declarative Pipeline Directives:**
 
 *   **`environment`:** Defines environment variables for the Pipeline or stage. Can use the `credentials()` helper to access pre-defined Jenkins credentials (Secret Text, Secret File, Username and Password, SSH with Private Key).
+'''
+environment {
+    APP_ENV = 'production'
+    DB_PASS = credentials('db-password')
+}
+'''
 *   **`options`:** Configures Pipeline-specific options, such as `buildDiscarder`, `checkoutToSubdirectory`, `disableConcurrentBuilds`, `disableResume`, `newContainerPerStage`, `overrideIndexTriggers`, `preserveStashes`, `quietPeriod`, `retry`, `skipDefaultCheckout`, `skipStagesAfterUnstable`, `timeout`, `timestamps`, `parallelsAlwaysFailFast`, `disableRestartFromStage`. Stage-level options are more limited (e.g., `retry`, `timeout`, `timestamps`, `skipDefaultCheckout`).
+  ```
+pipeline {
+    agent any
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '5'))
+        disableConcurrentBuilds()
+        timeout(time: 30, unit: 'MINUTES')
+        timestamps()
+        heckoutToSubdirectory('my-source-code')    -Clones repo into a subdirectory
+
+    }
+    stages {
+        stage('Build') {
+            options {
+                timeout(time: 10, unit: 'MINUTES')  // Timeout after 10 minutes
+                 retry(2)  // Retry the deploy stage twice on failure
+            }
+            steps {
+                echo 'Building the application...'
+            }
+        }
+```
 *   **`parameters`:** Defines parameters a user should provide when triggering the Pipeline. Available parameter types: `string`, `text`, `booleanParam`, `choice`, `password`. Values accessible via the `params` object.
 *   **`triggers`:** Defines automated ways to re-trigger the Pipeline (e.g., `cron`, `pollSCM`, `upstream`).
     *   `cron` syntax:  `MINUTE HOUR DOM MONTH DOW`. Uses `H` (hash) for even load distribution.  Supports operators like `*`, `M-N`, `M-N/X`, `*/X`, `A,B,…​,Z`. Also supports `@yearly`, `@annually`, `@monthly`, `@weekly`, `@daily`, `@midnight`, `@hourly`.
