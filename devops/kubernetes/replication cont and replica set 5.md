@@ -133,7 +133,11 @@ They **monitor** Kubernetes objects and **respond** accordingly to maintain the 
 6. **edit**
 - a temporary file opens with extra fields, u can modify the replicas there, save then updates automatically apply
    ```sh
-   kubectl edit replicaset <name> 
+   kubectl edit replica set <name> 
+   ```
+7. get the yaml definition fron the rs
+   ```sh
+   kubectl get rs new-replica-set -o yaml > new-replica-set.yaml
    ```
 ---
 
