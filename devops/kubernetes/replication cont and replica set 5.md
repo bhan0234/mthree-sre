@@ -56,7 +56,56 @@ They **monitor** Kubernetes objects and **respond** accordingly to maintain the 
    kubectl get replicationcontrollers
    kubectl get pods
    ```
+6. code
+   ```sh
+   apiVersion: apps/v1
+   kind: ReplicaSet
+   metadata:
+     name: myapp-replicaset
+     labels:
+       app: myapp
+       type: front-end
+   spec:
+     replicas: 3
+     selector:
+       matchLabels:
+         app: myapp
+         type: front-end
+     template:
+       metadata:
+         name: myapp-pod
+         labels:
+           app: myapp
+           type: front-end
+       spec:
+         containers:
+           - name: nginx-container
+             image: nginx
 
+
+   apiVersion: v1
+   kind: ReplicationController
+   metadata:
+     name: myapp-rc
+     labels:
+       app: myapp
+       type: front-end
+   spec:
+     replicas: 3
+     selector:
+       app: myapp
+       type: front-end
+     template:
+       metadata:
+         name: myapp-pod
+         labels:
+           app: myapp
+           type: front-end
+       spec:
+         containers:
+           - name: nginx-container
+             image: nginx
+      ```
 ---
 
 ## 💡 Replica Set - The Modern Replacement
