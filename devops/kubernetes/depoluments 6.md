@@ -245,7 +245,7 @@ deployment "nginx" created
 ## 📝 Summary of Commands 📜
 | Action | Command |
 |---------|----------------------------------------|
-| **Create Deployment** | `kubectl create -f deployment.yaml` |
+| **Create Deployment** | `kubectl create -f deployment.yaml --record` records this change-cause|
 | **List Deployments** | `kubectl get deployments` |
 | **Update Deployment (YAML)** | `kubectl apply -f deployment.yaml` |
 | **Update Deployment (CLI)** | `kubectl set image deployment/<deployment-name> <container-name>=<new-image>` |
