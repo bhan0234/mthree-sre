@@ -10,6 +10,11 @@ If you work in IT, you probably perform a lot of **repetitive tasks**, such as:
 - 🚀 Deploying applications and managing infrastructure
 - 🛡️ Performing security and compliance audits
 - 📦 Migrating systems and databases
+- Ansible’s agent-less architecture, meaning:
+
+✅ No need to install extra software (agents) on target machines – Unlike Puppet or Chef, which require an agent to be installed on every server, Ansible only needs SSH access (for Linux) or WinRM (for Windows).
+
+✅ Low maintenance overhead – Since no agents are running, you don’t have to worry about updating or managing them, reducing administrative effort.
 
 Performing these manually requires executing **hundreds of commands on multiple servers**, ensuring the right sequence of execution, and managing reboots.
 
