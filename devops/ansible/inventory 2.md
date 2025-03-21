@@ -29,6 +29,11 @@ server4.company.com ansible_host=server4.company.com ansible_connection=winrm
 
 [localhost]
 localhost ansible_connection=localhost
+
+#group the groups
+[parent_group:children]
+child_group1
+child_group2
 ```
 
 ### Inventory Parameters
@@ -88,6 +93,8 @@ Run a simple ping test:
 
 ```bash
 ansible all -i inventory.ini -m ping
+ansible web -i inventory.ini -m shell -a "uptime"    //shell command running
+
 ```
 
 Expected output:
