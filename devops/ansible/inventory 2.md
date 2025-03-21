@@ -16,16 +16,16 @@ The inventory file follows an INI-like format, listing servers one after another
 
 ```ini
 [web]
-server1.company.com ansible_host=server1.company.com ansible_connection=ssh
+web1 server1.company.com ansible_host=server1.company.com ansible_connection=ssh
 
 [db]
-server2.company.com ansible_host=server2.company.com ansible_connection=winrm
+db1naem server2.company.com ansible_host=server2.company.com ansible_connection=winrm
 
 [mail]
-server3.company.com ansible_host=server3.company.com ansible_connection=ssh
+mail1name server3.company.com ansible_host=server3.company.com ansible_connection=ssh
 
 [web2]
-server4.company.com ansible_host=server4.company.com ansible_connection=winrm
+webname server4.company.com ansible_host=server4.company.com ansible_connection=winrm
 
 [localhost]
 localhost ansible_connection=localhost
