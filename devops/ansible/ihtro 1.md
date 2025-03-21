@@ -10,6 +10,9 @@ If you work in IT, you probably perform a lot of **repetitive tasks**, such as:
 - 🚀 Deploying applications and managing infrastructure
 - 🛡️ Performing security and compliance audits
 - 📦 Migrating systems and databases
+- Simplicity: Automation playbooks use straightforward YAML syntax for code that reads like documentation. Ansible is also decentralized, using SSH with existing OS credentials to access to remote machines.
+- Scalability and flexibility- Easily and quickly scale the systems you automate through a modular design that supports a large range of operating systems, cloud platforms, and network devices.
+- Idempotence and predictability: When the system is in the state your playbook describes Ansible does not change anything, even if the playbook runs multiple times.
 - Ansible’s agent-less architecture, meaning:
 
 ✅ No need to install extra software (agents) on target machines – Unlike Puppet or Chef, which require an agent to be installed on every server, Ansible only needs SSH access (for Linux) or WinRM (for Windows).
