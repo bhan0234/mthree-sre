@@ -608,3 +608,31 @@ df['Age'].plot(kind='bar')
 plt.show()
 ```
 
+| **Category**               | **Method**                                  | **Description** |
+|----------------------------|---------------------------------------------|----------------|
+| **Creating Data Structures** | `pd.Series(data, index=labels)`          | Creates a Series (one-dimensional labeled array). |
+|                            | `pd.DataFrame(data)`                        | Creates a DataFrame (two-dimensional table). |
+|                            | `pd.read_csv('file.csv')`                   | Loads data from a CSV file. |
+| **Indexing & Selecting Data** | `df['column_name']`                       | Selects a column by label. |
+|                            | `df.iloc[index]`                            | Selects rows using integer index. |
+|                            | `df.iloc[start:end]`                        | Slices rows using integer index. |
+|                            | `df.loc[row_label]`                         | Selects rows by label. |
+|                            | `df.loc[row_condition, column_name]`        | Selects specific columns based on condition. |
+| **Adding Rows & Columns**  | `df['new_col'] = df['col1'] + df['col2']`   | Adds a new column. |
+|                            | `df = pd.concat([df1, df2], ignore_index=True)` | Adds new rows by concatenating DataFrames. |
+| **Filtering Data**         | `df[df['year_published'] < 1950]`           | Filters rows based on condition. |
+|                            | `df.loc[df['year_published'] < 1950, 'year_published']` | Returns a specific column for filtered rows. |
+|                            | `df.loc[df['salary'] < 70000, 'salary'] *= 1.1` | Updates values based on condition. |
+| **Sorting Data**           | `df.sort_values(by='column_name', ascending=False)` | Sorts DataFrame by column. |
+| **Handling Missing Data**  | `df.drop_duplicates()`                      | Removes duplicate rows. |
+|                            | `df.dropna()`                               | Removes rows with missing values. |
+|                            | `df.fillna(value)`                          | Replaces missing values with a specified value. |
+| **Descriptive Statistics** | `df.describe()`                            | Provides summary statistics. |
+|                            | `df.mean()`                                 | Calculates mean. |
+|                            | `df.std()`                                  | Calculates standard deviation. |
+|                            | `df.median()`                               | Finds median. |
+|                            | `df.min()`                                  | Finds minimum value. |
+|                            | `df.max()`                                  | Finds maximum value. |
+| **Grouping & Aggregation** | `df.groupby(['Year', 'Gender']).sum()`     | Groups by columns and applies sum function. |
+|                            | `df.groupby('column_name').mean()`         | Computes mean for each group. |
+|                            | `df.groupby('column_name').agg({'col1': 'mean', 'col2': 'sum'})` | Applies multiple aggregations. |
