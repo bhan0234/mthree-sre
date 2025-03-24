@@ -10,6 +10,9 @@ CREATE TABLE Employees (
     Name VARCHAR(100),
     Age INT,
     Department VARCHAR(50)
+    FOREIGN KEY fk_ProjectWorker_Project (ProjectId)
+      REFERENCES Project(ProjectId),
+
 );
 ```
 
